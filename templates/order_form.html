@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="kn">
+<head>
+    <meta charset="UTF-8">
+    <title>Gayakshari - Place Order</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #f8f9fa; padding: 20px; }
+        .order-container { max-width: 500px; margin: 30px auto; background: white; padding: 30px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        .title { color: #9f225e; text-align: center; margin-bottom: 20px; }
+        .product-preview { background: #f9f9f9; padding: 15px; border-radius: 6px; margin-bottom: 20px; text-align: center; }
+        input[type="text"], textarea { width: 100%; padding: 10px; margin: 10px 0; border: 1px solid #ddd; border-radius: 4px; box-sizing: border-box; }
+        .submit-btn { background-color: #9f225e; color: white; border: none; padding: 12px; width: 100%; border-radius: 4px; font-size: 16px; font-weight: bold; cursor: pointer; }
+        .submit-btn:hover { background-color: #841c4e; }
+    </style>
+</head>
+<body>
+
+<div class="order-container">
+    <h2 class="title">Confirm Your Order</h2>
+    
+    <!-- ಆರ್ಡರ್ ಮಾಡುತ್ತಿರುವ ಸೀರೆಯ ವಿವರ -->
+    <div class="product-preview">
+        <h3 style="margin: 0; color: #333;">{{ product.name }}</h3>
+        <p style="margin: 5px 0; font-weight: bold; color: #666;">ಬೆಲೆ: ₹ {{ product.price }}</p>
+    </div>
+
+    <!-- ಆರ್ಡರ್ ಫಾರ್ಮ್ -->
+    <form method="POST">
+        {% csrf_token %}
+        <label>ನಿಮ್ಮ ಪೂರ್ಣ ಹೆಸರು (Full Name):</label>
+        <input type="text" name="customer_name" required placeholder="Enter your name">
+
+        <label>ಮೊಬೈಲ್ ಸಂಖ್ಯೆ (Phone Number):</label>
+        <input type="text" name="customer_phone" required placeholder="Enter 10 digit number">
+
+        <label>ತಲುಪಿಸಬೇಕಾದ ವಿಳಾಸ (Shipping Address):</label>
+        <textarea name="shipping_address" rows="4" required placeholder="Enter full delivery address with pincode"></textarea>
+
+        <button type="submit" class="submit-btn">Confirm & Place Order</button>
+    </form>
+</div>
+
+</body>
+</html>

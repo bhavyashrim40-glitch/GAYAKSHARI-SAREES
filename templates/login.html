@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="kn">
+<head>
+    <meta charset="UTF-8">
+    <title>Gayakshari - Login</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #f8f9fa; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
+        .login-card { background: white; padding: 40px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); width: 350px; text-align: center; }
+        .logo { font-size: 28px; font-weight: bold; color: #9f225e; text-transform: uppercase; margin-bottom: 25px; letter-spacing: 2px; }
+        input[type="text"], input[type="password"] { width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #ddd; border-radius: 4px; box-sizing: border-box; }
+        .btn { background-color: #9f225e; color: white; border: none; padding: 12px; width: 100%; border-radius: 4px; font-size: 16px; font-weight: bold; cursor: pointer; margin-top: 15px; }
+        .btn:hover { background-color: #841c4e; }
+        .signup-link { margin-top: 20px; font-size: 14px; color: #666; }
+        .signup-link a { color: #9f225e; text-decoration: none; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <div class="login-card">
+        <!-- ವೆಬ್‌ಸೈಟ್ ಓಪನ್ ಮಾಡಿದ ತಕ್ಷಣ ಕಾಣಿಸುವ ದೊಡ್ಡ ಲೋಗೋ -->
+        <div class="logo">GAYAKSHARI</div>
+        <p style="color: #666; margin-bottom: 20px;">Please login to view our premium collections</p>
+        
+        <form method="POST">
+            {% csrf_token %}
+            <input type="text" name="username" placeholder="Username / ಮೊಬೈಲ್ ಸಂಖ್ಯೆ" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <button type="submit" class="btn">Login</button>
+        </form>
+        
+        <div class="signup-link">
+            ಹೊಸ ಗ್ರಾಹಕರಾ? <a href="{% url 'signup' %}">Create an Account</a>
+        </div>
+    </div>
+</body>
+</html>

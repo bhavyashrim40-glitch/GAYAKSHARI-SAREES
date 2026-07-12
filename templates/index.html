@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="kn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gayakshari - Meesho Style</title>
+    <style>
+        /* ಮೀಶೋ ಶೈಲಿಯ ಜಾಗತಿಕ ಸೆಟ್ಟಿಂಗ್ಸ್ */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+
+        /* ಹೆಡರ್ ಶೈಲಿ (Header) */
+        header {
+            background-color: #ffffff;
+            padding: 15px 5%;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #9f225e; /* ಮೀಶೋ ತರಹದ ಮಜೆಂಟಾ ಬಣ್ಣ */
+            text-transform: uppercase;
+        }
+        nav a {
+            text-decoration: none;
+            color: #666;
+            margin-left: 20px;
+            font-weight: 500;
+        }
+
+        /* ಮುಖ್ಯ ಕಂಟೇನರ್ */
+        .container {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+        .title {
+            font-size: 22px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        /* ಪ್ರೊಡಕ್ಟ್ ಗ್ರಿಡ್ ಲೇಔಟ್ (Meesho Layout) */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        /* ಪ್ರೊಡಕ್ಟ್ ಕಾರ್ಡ್ ಶೈಲಿ */
+        .product-card {
+            background-color: #ffffff;
+            border: 1px solid #eaeaea;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        /* ಪ್ರೊಡಕ್ಟ್ ಚಿತ್ರಗಳು */
+        .product-image {
+            width: 100%;
+            height: 320px;
+            object-fit: cover;
+            background-color: #f1f1f1; /* ಚಿತ್ರ ಸಿಗದಿದ್ದರೆ ಬ್ಯಾಕ್‌ಗ್ರೌಂಡ್ ಬಣ್ಣ */
+        }
+
+        /* ಪ್ರೊಡಕ್ಟ್ ವಿವರಗಳು */
+        .product-info {
+            padding: 15px;
+        }
+        .product-name {
+            font-size: 16px;
+            color: #666;
+            margin: 0 0 8px 0;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .product-price {
+            font-size: 20px;
+            font-weight: bold;
+            color: #333;
+            margin: 0 0 12px 0;
+        }
+
+        /* ಮೀಶೋ ತರಹದ ಬಟನ್ */
+        .buy-btn {
+            display: block;
+            width: 100%;
+            background-color: #9f225e;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            border: none;
+            border-radius: 4px;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .buy-btn:hover {
+            background-color: #841c4e;
+        }
+
+        /* ಫುಟರ್ */
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: #888;
+            font-size: 14px;
+            margin-top: 50px;
+            background-color: #fff;
+            border-top: 1px solid #eaeaea;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ಹೆಡರ್ ಭಾಗ -->
+    <header>
+        <div class="logo">Gayakshari</div>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">Collections</a>
+            <a href="#">Shop Now</a>
+        </nav>
+    </header>
+
+    <!-- ಮುಖ್ಯ ಉತ್ಪನ್ನಗಳ ಭಾಗ -->
+    <div class="container">
+        <h2 class="title">Our Beautiful Collections</h2>
+        
+        <div class="product-grid">
+            
+            <!-- ಪ್ರೊಡಕ್ಟ್ 1 -->
+            <div class="product-card">
+                <!-- ಗಮನಿಸಿ: ನಿಮ್ಮ ಇಮೇಜ್ ಫೋಲ್ಡರ್ ಹೆಸರನ್ನು ಇಲ್ಲಿ ಸರಿಯಾಗಿ ಹಾಕಿ (ಉದಾ: static/ ಅಥವಾ images/) -->
+                <img src="images/kanjeevaram.jpg" alt="Pure Kanjeevaram Silk Saree" class="product-image">
+                <div class="product-info">
+                    <p class="product-name">Pure Kanjeevaram Silk Saree</p>
+                    <p class="product-price">₹ 4,500</p>
+                    <button class="buy-btn">Buy Now</button>
+                </div>
+            </div>
+
+            <!-- ಪ್ರೊಡಕ್ಟ್ 2 -->
+            <div class="product-card">
+                <img src="images/banarasi.jpg" alt="Elegant Banarasi Saree" class="product-image">
+                <div class="product-info">
+                    <p class="product-name">Elegant Banarasi Saree</p>
+                    <p class="product-price">₹ 3,200</p>
+                    <button class="buy-btn">Buy Now</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ಫುಟರ್ ಭಾಗ -->
+    <footer>
+        &copy; 2026 Gayakshari Sarees. All Rights Reserved.
+    </footer>
+
+</body>
+</html>

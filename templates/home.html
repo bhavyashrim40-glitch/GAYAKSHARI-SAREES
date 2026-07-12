@@ -1,0 +1,26 @@
+<!-- ಹೆಡರ್ ಭಾಗ: ಲೋಗೋ ಮತ್ತು ಲಾಗ್‌ಔಟ್ ಬಟನ್ -->
+<header style="background-color: #ffffff; padding: 15px 5%; box-shadow: 0 2px 4px rgba(0,0,0,0.1); display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+    <div style="font-size: 24px; font-weight: bold; color: #9f225e; text-transform: uppercase; letter-spacing: 2px;">Gayakshari</div>
+    <nav style="display: flex; align-items: center;">
+        <span style="color: #9f225e; font-weight: bold; margin-right: 20px; font-family: sans-serif;">👋 ಹಲೋ, {{ user.username }}</span>
+        <a href="{% url 'logout' %}" style="color: #ff3333; text-decoration: none; font-weight: bold; font-family: sans-serif;">Logout</a>
+    </nav>
+</header>
+<div class="product-grid">
+    {% for product in products %}
+    <div class="product-card">
+        <!-- ಡೇಟಾಬೇಸ್‌ನಿಂದ ಇಮೇಜ್ ಯೂಆರ್‌ಎಲ್ ಇಲ್ಲಿ ಲೋಡ್ ಆಗುತ್ತದೆ -->
+        <img src="{{ product.image.url }}" alt="{{ product.name }}" class="product-image">
+        <div class="product-info">
+            <p class="product-name">{{ product.name }}</p>
+            <p class="product-price">₹ {{ product.price }}</p>
+            <!-- ಗ್ರಾಹಕರು ಆರ್ಡರ್ ಮಾಡಲು ಸೀರೆಯ ಐಡಿಯೊಂದಿಗೆ ಲಿಂಕ್ ಮಾಡಲಾಗಿದೆ -->
+<a href="{% url 'place_order' product.id %}" style="display: block; text-decoration: none;">
+    <button class="buy-btn" type="button">Buy Now</button>
+</a>
+        </div>
+    </div>
+    {% empty %}
+    <p style="text-align: center; width: 100%;">ಯಾವುದೇ ಸೀರೆಗಳು ಲಭ್ಯವಿಲ್ಲ. ದಯವಿಟ್ಟು ಅಡ್ಮಿನ್ ಪ್ಯಾನಲ್‌ನಲ್ಲಿ ಅಪ್‌ಲೋಡ್ ಮಾಡಿ!</p>
+    {% endfor %}
+</div>
